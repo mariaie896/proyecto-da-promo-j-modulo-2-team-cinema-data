@@ -16,7 +16,7 @@ Para ello, utilizaremos técnicas de web scraping para extraer información de f
 ###### Proyecto CinemExtract: 
 Explorando el Séptimo Arte a través de Datos y Tecnología
 
-![](https://github.com/elenacrami/mi_primer_repo/blob/main/cine.png)
+<img src="https://github.com/elenacrami/mi_primer_repo/blob/main/cine.png" width="200px" />
 
 ### Componentes del equipo:
 
@@ -40,14 +40,14 @@ A su vez, la fase 1 de *Extracción de Datos* engloba cuatro extracciones desde:
 
 **1.1.** Hacemos solicitudes a la API proporcionada y extraemos una muestra de los datos relevantes sobre las películas ya que trabajamos en el período de tiempo comprendido desde el año 2000 hasta el 2015 incluido. 
 
-![](https://github.com/elenacrami/mi_primer_repo/blob/main/IMDB_Log.png)
+<img src="https://github.com/elenacrami/mi_primer_repo/blob/main/IMDB_Log.png" width="200px" />
 
 **1.2.** Obtenemos información más detallada sobre las películas de la página web IMBD, para lo que usamos la herramienta de automatización web Selenium.
 
 **1.3.** Extraemos información detallada de los 10 principales actores de cada una de las películas extraídas.
 
 **1.4.** Por último, trabajamos con la biblioteca BeautifulSoup para extraer datos relevante de las tablas de los premios Oscar desde 2000:
-![](https://github.com/elenacrami/mi_primer_repo/blob/main/oscar.jpg)
+<img src="https://github.com/elenacrami/mi_primer_repo/blob/main/oscar.jpg" width="200px" />
 
 **NOTA:** Almacenamos la información en una lista de tuplas donde cada tupla corresponderá a una película. 
 
@@ -77,10 +77,10 @@ A su vez, la fase 1 de *Extracción de Datos* engloba cuatro extracciones desde:
 **3.Uso:** Una vez instaladas las bibliotecas y el WebDriver, podrás importarlas en tus scripts de Python y comenzar a realizar tareas de web scraping.
 
 *Selenium*
-![](https://github.com/elenacrami/mi_primer_repo/blob/main/Selenium_Logo.png)
+<img src="https://github.com/elenacrami/mi_primer_repo/blob/main/Selenium_Logo.png" width="200px" />
 
 *BeautifulSoup*
-![](https://github.com/elenacrami/mi_primer_repo/blob/main/tap-beautifulsoup.png)
+<img src="https://github.com/elenacrami/mi_primer_repo/blob/main/tap-beautifulsoup.png" width="200px" />
 
 #### Herramienta de gestión de base de datos: MYSQL Workbench
 
@@ -90,7 +90,7 @@ A su vez, la fase 1 de *Extracción de Datos* engloba cuatro extracciones desde:
 
 **3.Configura MySQL:** Una vez instalado, configura el servidor MySQL estableciendo una contraseña segura para el usuario root y otros parámetros necesarios.
 
-![](https://github.com/elenacrami/mi_primer_repo/blob/main/Mysql_logo.png)
+<img src="https://github.com/elenacrami/mi_primer_repo/blob/main/Mysql_logo.png" width="200px" />
 
 #### Sintáxis:
 
@@ -163,7 +163,8 @@ FALTAN IMÁGENES POR INTRODUCIR CÓDIGO
 
 ### Contacto:
 
-![](https://github.com/elenacrami/mi_primer_repo/blob/main/gmail.png)
+<img src="https://github.com/elenacrami/mi_primer_repo/blob/main/gmail.png" width="100px" />
+
 <elena.crami@gmail.com>
 
 <mariaandreagg@gmail.com>
@@ -171,7 +172,8 @@ FALTAN IMÁGENES POR INTRODUCIR CÓDIGO
 <maria.elvira8@gmail.com>
 
 
-![](https://github.com/elenacrami/mi_primer_repo/blob/main/linkedin.png)
+<img src="https://github.com/elenacrami/mi_primer_repo/blob/main/linkedin.png" width="100px" />
+
 [LinkedIn Elena Craven Miñarro](https://www.linkedin.com/in/elenacravenmiñarro )
 
 [LinkedIn Andrea González](https://www.linkedin.com/in/maria-andrea-gonzalezg/)
