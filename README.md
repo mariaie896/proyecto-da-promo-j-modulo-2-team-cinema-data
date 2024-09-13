@@ -1,111 +1,98 @@
-<h1>Proyecto grupal Módulo 2</h1>
 
-Este proyecto es un ejercicio académico grupal que contiene el código creado en respuesta a mejorar la calidad del contenido y satisfacción de los usuarios de una plataforma de streaming ficticia llamada DataStream.
+# Proyecto grupal Módulo 2
 
-Nuestro proyecto consiste en aplicar técnicas de análisis de datos para identificar cuáles son las películas y cortometrajes más populares y mejor valorados desde 1900 hasta la fecha. Esto ayudará a DataStream a tomar decisiones informadas sobre qué contenido promocionar y destacar en su plataforma.
+Este proyecto es un ejercicio académico grupal que contiene el código creado en respuesta a mejorar la calidad del contenido y satisfacción de los usuarios de una plataforma de streaming ficticia llamada *DataStream*.
 
-El objetivo es identificar las películas y cortos más populares en la plataforma DataStream, basándonos en criterios como las calificaciones, el número de visualizaciones y las reseñas de los usuarios.
+Aplicaremos técnicas de análisis de datos para identificar cuáles son las películas y cortometrajes más populares y mejor valorados desde 2000 hasta la fecha. Esto ayudará a *DataStream* a tomar decisiones informadas sobre qué contenido promocionar y destacar en su plataforma.
 
-Para ello, utilizaremos técnicas de web scraping para extraer información de fuentes como la API de MoviesDataset, IMDB, Rotten Tomatoes y Wikipedia. Una vez que tengamos la información necesaria, la almacenaremos en una base de datos y realizaremos consultas para identificar las películas y cortos más populares y mejor valorados.
+Para ello, utilizaremos técnicas de web scraping para extraer información de fuentes como la API de MoviesDataset, IMDB y Wikipedia. Una vez que tengamos la información necesaria, la almacenaremos en una base de datos y realizaremos consultas.
 
-<h3>Nombre del equipo: </h3>
+### Nombre del equipo:
 
-<h4>cinEMA Data</h4>
+#### cinEMA Data
 
-<h3>Nombre del proyecto: </h3>
+### Nombre del proyecto:
 
-<h4>Proyecto CinemExtract: 
-Explorando el Séptimo Arte a través de Datos y Tecnología</h4>
+###### Proyecto CinemExtract: 
+Explorando el Séptimo Arte a través de Datos y Tecnología
 
-**IMAGEN A INSERTAR LOGO CINE**
+![](https://github.com/elenacrami/mi_primer_repo/blob/main/cine.png)
 
-<h3>Componentes del equipo: </h3>
+### Componentes del equipo:
 
-<h4> Elena Craven,  Andrea González, María Ibáñez</h4>
+#### Elena Craven,  Andrea González, María Ibáñez
 
-<h3>Propósito: </h3>
+### Propósito:
 
-El propósito de la creación del código para este proyecto se define en los siguientes puntos:
 - La comprobación de la adquisición de conocimiento de Python y SQL
 - El uso de control de versiones en equipo para aprender las ventajas y conflictos que genera.
 - La implementación de Scrum como marco de referencia para el desarrollo del producto, basándonos siempre en los valores de Agile como puntos clave del trabajo en equipo y la mejora continua.
 - La mejora de la comunicación colaborativa entre los miembros del equipo.
 - La mejora de habilidades de comunicación individual en público al exponer el proyecto en la sesión final.
 
-<h3>Estructura del proyecto: </h3>
+### Fases:
 
-<h4>Historias de usuario: </h4>
-
-<h6>Historia 1: Selección de Herramientas para la Recolección de Datos</h6>
-
-<h6>Historia 2: Decisión de la Estructura de la Base de Datos</h6>
-
-<h6>Historia 3: Extracción de Datos de APIs y Web Scraping</h6>
-
-<h6>Historia 4:  Inserción de Datos en la Base de Datos</h6>
-
-<h6>Historia 5: Realización de Consultas para Análisis de Datos</h6>
-
-<h6>Historia 6: Presentación de Resultados</h6>
-
-<h4>Fases: </h4>
-
-**1.  Fase 1: Extracción de Datos**
-**2.  Fase 2: Organización y Almacenamiento de Datos**
+**1.  Fase 1: Extracción de Datos**\
+**2.  Fase 2: Organización y Almacenamiento de Datos**\
 **3.  Fase 3: Análisis y Consultas de Datos** 
 
-A su vez, la fase 1 de *Extracción de Datos* engloba tres tareas ya que extraemos datos de la API de CinemaExtract, de películas y actores con Selenium, así como Tablas de los Premios Oscar con Beautiful Soup.
+A su vez, la fase 1 de *Extracción de Datos* engloba cuatro extracciones desde: la API de CinemaExtract, IMBD y Wikipedia.
 
-Hacemos solicitudes a la API proporcionada y extraemos una muestra de los datos relevantes sobre las películas ya que trabajamos en el período de tiempo comprendido desde el año 2000 hasta el 2015 incluido. 
+**1.1.** Hacemos solicitudes a la API proporcionada y extraemos una muestra de los datos relevantes sobre las películas ya que trabajamos en el período de tiempo comprendido desde el año 2000 hasta el 2015 incluido. 
 
-En el segundo paso obtenemos información más detallada sobre las películas de la página web IMBD, para lo que usamos la herramienta de automatización web Selenium:
-- Puntuación de IMDB (en caso de que la tenga).
-- Dirección (director/a o directores/as de cada película).
-- Guionistas (de cada película).
-- Argumento.
-- Nombre de la película.
-- Id de la película.
+![](https://github.com/elenacrami/mi_primer_repo/blob/main/IMDB_Log.png)
 
-El siguiente paso es extraer información detallada de los 10 principales actores de cada una de las películas extraídas:
-Nombre.
-- Año de nacimiento.
-- ¿Por qué es conocido?
-- ¿Qué hace?
-- Premios.
+**1.2.** Obtenemos información más detallada sobre las películas de la página web IMBD, para lo que usamos la herramienta de automatización web Selenium.
 
-Por último, trabajamos con la biblioteca BeautifulSoup para extraer datos relevante de las tablas de los premios Oscar desde 2000:
-- Fecha de la ceremonia.
-- Mejor película.
-- Mejor director.
-- Mejor actor.
-- Mejor actriz.
+**1.3.** Extraemos información detallada de los 10 principales actores de cada una de las películas extraídas.
+
+**1.4.** Por último, trabajamos con la biblioteca BeautifulSoup para extraer datos relevante de las tablas de los premios Oscar desde 2000:
+![](https://github.com/elenacrami/mi_primer_repo/blob/main/oscar.jpg)
 
 **NOTA:** Almacenamos la información en una lista de tuplas donde cada tupla corresponderá a una película. 
 
 **FASES 2 Y 3 BBDD/SQL**
-**+ IMAGEN SQL A INSERTAR**
 
-<h3>Links: </h3>
+
+#### Links:
 
 [Link IMBD](https://www.imdb.com/)
 
 [Link Academy Awards Wikipedia](https://en.wikipedia.org/wiki/Academy_Awards)
 
-**BONUS** [Link Rotten Tomatoes](https://www.rottentomatoes.com/)
+### Instalaciones: 
 
-**IMAGEN LOGO IMBD & ROTTEN TOMATOES A INSERTAR**
+#### Python:
 
-<h3>Instalaciones: </h3>
+**1.Descarga el instalador:** Visita la web oficial de [Python](https://www.python.org/) y descarga el instalador correspondiente a tu sistema operativo (Windows, macOS, Linux).
 
-<h4>Python: </h4>
+**2.Ejecuta el instalador:** Sigue las instrucciones para descargarte las extensiones necesarias.
 
-1. Ve al sitio web oficial de [Python](https://www.python.org/)
-2. Descarga la versión más reciente de Python 3.
-3. Sigue las instrucciones de instalación en tu sistema operativo (*Windows, Mac o Linux*)
+#### Bibliotecas:
 
-<h4>Bibliotecas: </h4>
+**1.Instalación:** Para comenzar a utilizar Selenium y BeautifulSoup en tu proyecto de Python, ejecuta los comandos referenciados en la sintáxis en tu terminal.
 
-<h6>sintáxis:</h6>
+**2.WebDriver:** Descarga el WebDriver correspondiente a tu navegador (Chrome, Firefox, etc.), ya que permitirá a Selenium controlar el navegador de forma automatizada.
+
+**3.Uso:** Una vez instaladas las bibliotecas y el WebDriver, podrás importarlas en tus scripts de Python y comenzar a realizar tareas de web scraping.
+
+*Selenium*
+![](https://github.com/elenacrami/mi_primer_repo/blob/main/Selenium_Logo.png)
+
+*BeautifulSoup*
+![](https://github.com/elenacrami/mi_primer_repo/blob/main/tap-beautifulsoup.png)
+
+#### Herramienta de gestión de base de datos: MYSQL Workbench
+
+**1.Descarga el instalador:** Visita la página oficial de [MySQL](https://dev.mysql.com/) y descarga el instalador correspondiente a tu sistema operativo (Windows, macOS, Linux).
+
+**2.Ejecuta el instalador:** Sigue las instrucciones del asistente de instalación, seleccionando las opciones que se adapten a tus necesidades.
+
+**3.Configura MySQL:** Una vez instalado, configura el servidor MySQL estableciendo una contraseña segura para el usuario root y otros parámetros necesarios.
+
+![](https://github.com/elenacrami/mi_primer_repo/blob/main/Mysql_logo.png)
+
+#### Sintáxis:
 
 **!pip install pandas**
 
@@ -115,7 +102,7 @@ Por último, trabajamos con la biblioteca BeautifulSoup para extraer datos relev
 
 **!pip install webdriver-manager**
 
-<h3>Importación de librerías: </h3>
+### Importación de librerías:
 
 Importamos librerías y herramientas en Python para realizar solicitudes a API's de manera efectiva, así como para web scraping y manipulación de datos.
 
@@ -139,7 +126,7 @@ Importamos librerías y herramientas en Python para realizar solicitudes a API's
 
 **-** Configuraciones que establece una opción de Pandas para mostrar todas las columnas de un *DataFrame*.
 
-<h6>sintáxis:</h6>
+#### Sintáxis:
 
 **import pandas as pd**
 
@@ -159,27 +146,24 @@ Importamos librerías y herramientas en Python para realizar solicitudes a API's
 
 **pd.set_option('display.max_columns', None)**
 
-**IMAGEN A INSERTAR LOGO BEAUTIFULSOUP**
-**IMAGEN A INSERTAR LOGO SELENIUM**
-**IMAGEN A INSERTAR LOGO PANDAS**
-
-<h3>Conceptos básicos:</h3> 
+### Conceptos básicos:
 
 - **API** (*Application Programming Interfaces*) son conjuntos de reglas y protocolos que permiten a diferentes aplicaciones o sistemas comunicarse entre sí. Éstas definen cómo se pueden solicitar y compartir datos o funcionalidades de un sistema a otro de manera estructurada y estandarizada.
 
-- **Web Scraping** Es una técnica utilizada para extraer información de sitios web de manera eficiente y  automatizada. Consiste en escribir un programa o utilizar herramientas para recorrer y analizar el código HTML o XML de una página web, y extraer los datos relevantes de forma estructurada con diversas finalidades, como recopilar datos para análisis, realizar comparaciones de precios, monitorizar contenido u obtener información de noticias, entre otras aplicaciones.
+- **Web Scraping** Es una técnica utilizada para extraer información de sitios web de manera eficiente y automatizada. Consiste en escribir un programa o utilizar herramientas para recorrer y analizar el código HTML o XML de una página web, y extraer los datos relevantes para recopilar datos para análisis.
 
-- Existen varias bibliotecas en Python que son ampliamente utilizadas para realizar *web scraping*. En En este proyecto hacemos uso de BeautifulSoup y Selenium.
+- **Beautiful Soup**: Es una biblioteca muy utilizada para el análisis y extracción de datos de páginas web. Proporciona una interfaz fácil de usar para analizar y manipular el HTML y XML de una página web, y permite buscar elementos utilizando etiquetas, atributos y contenido, facilitando la extracción de datos específicos.
 
-- **Beautiful Soup**: Es una biblioteca muy utilizada para el análisis y extracción de datos de páginas web. Proporciona una interfaz fácil de usar para analizar y manipular el HTML y XML de una página web, y  permite buscar elementos utilizando etiquetas, atributos y contenido, lo que facilita la extracción de datos específicos.
+- **Selenium**: Es una biblioteca que se utiliza para automatizar el navegador web y simular las acciones de un usuario, como hacer clic en elementos, completar formularios, navegar por diferentes páginas y extraer información.
 
-- **Selenium**: Es una biblioteca que se utiliza para automatizar el navegador web y simular las acciones de un usuario, como hacer clic en elementos, completar formularios, navegar por diferentes páginas y extraer información. . Selenium es útil cuando el contenido que se desea extraer es generado dinámicamente a través de JavaScript u otras interacciones del lado del cliente. Proporciona funciones para interactuar con elementos de la página, hacer clic en botones, enviar formularios y más.
+- **HTML** (*Hypertext Markup Language - Lenguaje de Marcado de Hipertexto*) se basa en una estructura jerárquica de etiquetas que se utiliza para estructurar y presentar el contenido de una página web, como texto, imágenes, enlaces, formularios y otros elementos interactivos.
 
-- **HTML** (*Hypertext Markup Language - Lenguaje de Marcado de Hipertexto*) se basa en una estructura jerárquica de etiquetas/elementos que tienen un propósito específico y se colocan dentro del código HTML para darle formato. HTML se utiliza para estructurar y presentar el contenido de una página web, como texto, imágenes, enlaces, formularios y otros elementos interactivos.
+### Ejemplos de código:
+FALTAN IMÁGENES POR INTRODUCIR CÓDIGO
 
-<h3>Ejemplos de código: </h3> FALTAN IMÁGENES POR INTRODUCIR CÓDIGO
-<h3>Contacto: </h3>
+### Contacto:
 
+![](https://github.com/elenacrami/mi_primer_repo/blob/main/gmail.png)
 <elena.crami@gmail.com>
 
 <mariaandreagg@gmail.com>
@@ -187,9 +171,10 @@ Importamos librerías y herramientas en Python para realizar solicitudes a API's
 <maria.elvira8@gmail.com>
 
 
-
+![](https://github.com/elenacrami/mi_primer_repo/blob/main/linkedin.png)
 [LinkedIn Elena Craven Miñarro](https://www.linkedin.com/in/elenacravenmiñarro )
 
 [LinkedIn Andrea González](https://www.linkedin.com/in/maria-andrea-gonzalezg/)
 
 [LinkedIn María Ibáñez](https://www.linkedin.com/in/maría-ibáñez-a02051178)
+
