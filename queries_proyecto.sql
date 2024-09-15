@@ -9,8 +9,13 @@ FROM ;
  
 /*QUERY 2:
 ¿Qué género es el mejor valorado en IMDB? */ 
-SELECT
-FROM tabla_selenium_pelis;
+
+SELECT Genero, AVG(Puntuación) AS Puntuacion_Media
+FROM peliculas_imdb
+GROUP BY Genero
+ORDER BY Puntuacion_Media DESC
+LIMIT 1;
+
 
 
 /*QUERY 3
@@ -66,14 +71,16 @@ HAVING COUNT(titulo) = (
 
 /*QUERY 5
 ¿Cuál es la mejor serie valorada en IMDB?*/
-SELECT
-FROM tabla_selenium_pelis;
+
 
 
 /*QUERY 6
 ¿Cuál es la película mejor valorada en IMDB?*/
-SELECT
-FROM tabla_selenium_pelis;
+
+SELECT Nombre_de_la_película, Puntuación
+FROM peliculas_imdb
+ORDER BY Puntuación DESC
+LIMIT 1;
 
 
 /*QUERY 7
@@ -86,5 +93,34 @@ FROM tabla_selenium_actores;
 ¿Hay algún actor/actriz que haya recibido más de un premio Óscar?*/
 SELECT
 FROM datos_oscars;
+
+
+
+
+-- CONVERTIR PUNTUACIÓN 'DESCONOCIDA' A NULL
+UPDATE 
+    peliculas_imdb
+SET 
+    Puntuación = NULL
+WHERE 
+    Puntuación = 'Desconocido';
+    
+   --  ------------------------------------------------------------------
+   -- CAMBIAR EN LOS DECIMALES LAS COMAS A PUNTOS
+UPDATE 
+    peliculas_imdb
+SET 
+    Puntuación = REPLACE(Puntuación, ',', '.')
+WHERE 
+    Puntuación LIKE '%,%';
+    
+  --  ------------------------------------------------------------------
+-- CAMBIAR DE VARCHAR A FLOAT EN PUNTUACIÓN
+ALTER TABLE 
+    peliculas_imdb
+MODIFY COLUMN 
+    Puntuación DECIMAL(3,1);
+-- 
+
 
 
