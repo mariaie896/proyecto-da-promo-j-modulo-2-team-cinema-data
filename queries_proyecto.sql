@@ -3,9 +3,32 @@ USE cinemadata;
 
 /*QUERY 1:
 ¿Qué géneros han recibido más premios Óscar?*/
-SELECT
-FROM ;
- 
+
+
+WITH peliculas_ganadoras AS (
+  -- Identificar todas las películas que han ganado en cualquier categoría
+  SELECT mejor_pelicula AS titulo
+  FROM datos_oscars
+  UNION
+  SELECT mejor_director AS titulo
+  FROM datos_oscars
+  UNION
+  SELECT mejor_actor AS titulo
+  FROM datos_oscars
+  UNION
+  SELECT mejor_actriz AS titulo
+  FROM datos_oscars
+)
+
+-- Ahora contar los géneros de las películas ganadoras
+SELECT pg.genero, COUNT(pga.titulo) AS total_premios
+FROM peliculas_generos AS pg
+JOIN peliculas_ganadoras AS pga
+  ON pg.titulo = pga.titulo
+GROUP BY pg.genero
+ORDER BY total_premios DESC;
+
+
  
 /*QUERY 2:
 ¿Qué género es el mejor valorado en IMDB? */ 
@@ -25,52 +48,24 @@ SELECT año, COUNT(titulo) AS TotalPeliculas
 FROM peliculas_generos
 WHERE tipo = 'Movie'
 GROUP BY año
-ORDER BY año DESC
+ORDER BY TotalPeliculas DESC
 LIMIT 1;
-
--- Planteamiento 2
-SELECT año, COUNT(titulo) AS TotalPeliculas
-FROM peliculas_generos
-WHERE tipo = 'Movie'
-GROUP BY año
-HAVING COUNT(titulo) = (
-    SELECT MAX(TotalPeliculas)
-    FROM (
-        SELECT COUNT(titulo) AS TotalPeliculas
-        FROM peliculas_generos
-        WHERE tipo = 'Movie'
-        GROUP BY año
-    ) AS subconsulta
-);
 
 
 /*QUERY 4
 ¿En qué año se estrenaron más cortos?*/
 -- Planteamiento 1
-SELECT COUNT(titulo), año
+SELECT COUNT(titulo) AS Corto, año
 FROM peliculas_generos
 WHERE tipo = 'Short'
 GROUP BY año
-ORDER BY año DESC
+ORDER BY Corto DESC
 LIMIT 1;
 
--- Planteamiento 2
-SELECT año, COUNT(titulo) AS TotalPeliculas
-FROM peliculas_generos
-WHERE tipo = 'Short'
-GROUP BY año
-HAVING COUNT(titulo) = (
-    SELECT MAX(TotalPeliculas)
-    FROM (
-        SELECT COUNT(titulo) AS TotalPeliculas
-        FROM peliculas_generos
-        WHERE tipo = 'Short'
-        GROUP BY año
-    ) AS subconsulta
-);
 
 /*QUERY 5
-¿Cuál es la mejor serie valorada en IMDB?*/
+¿Cuál es la mejor serie valorada en IMDB?
+ES BONUS*/
 
 
 
@@ -85,42 +80,35 @@ LIMIT 1;
 
 /*QUERY 7
 ¿Qué actor/actriz ha recibido más premios?*/
-SELECT
-FROM tabla_selenium_actores;
 
+SELECT Nombre, COUNT(Premios) AS Premios_Ganados
+FROM actor_imdb
+GROUP BY Nombre
+ORDER BY Premios_Ganados DESC
+LIMIT 1;
 
 /*QUERY 8
 ¿Hay algún actor/actriz que haya recibido más de un premio Óscar?*/
-SELECT
-FROM datos_oscars;
+
+-- Contar actores que han ganado más de un premio
+SELECT mejor_actor AS nombre_actor_actriz, COUNT(mejor_actor) AS premios_ganados
+FROM datos_oscars
+GROUP BY mejor_actor
+HAVING COUNT(mejor_actor) > 1
+
+UNION ALL
+
+-- Contar actrices que han ganado más de un premio
+SELECT mejor_actriz AS nombre_actor_actriz, COUNT(mejor_actriz) AS premios_ganados
+FROM datos_oscars
+GROUP BY mejor_actriz
+HAVING COUNT(mejor_actriz) > 1;
 
 
 
 
--- CONVERTIR PUNTUACIÓN 'DESCONOCIDA' A NULL
-UPDATE 
-    peliculas_imdb
-SET 
-    Puntuación = NULL
-WHERE 
-    Puntuación = 'Desconocido';
-    
-   --  ------------------------------------------------------------------
-   -- CAMBIAR EN LOS DECIMALES LAS COMAS A PUNTOS
-UPDATE 
-    peliculas_imdb
-SET 
-    Puntuación = REPLACE(Puntuación, ',', '.')
-WHERE 
-    Puntuación LIKE '%,%';
-    
-  --  ------------------------------------------------------------------
--- CAMBIAR DE VARCHAR A FLOAT EN PUNTUACIÓN
-ALTER TABLE 
-    peliculas_imdb
-MODIFY COLUMN 
-    Puntuación DECIMAL(3,1);
--- 
+
+
 
 
 
