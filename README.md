@@ -51,7 +51,54 @@ A su vez, la fase 1 de *Extracción de Datos* engloba cuatro extracciones desde:
 
 **NOTA:** Almacenamos la información en una lista de tuplas donde cada tupla corresponderá a una película. 
 
-**FASES 2 Y 3 BBDD/SQL**
+
+En la fase 2 de *Organización y Almacenamiento de Datos* hemos normalizado los datos y definido 4 tablas:
+    
+    -  **peliculas_generos**\
+    *Columnas*
+    titulo: Nombre de la producción audiovisual 
+    id: Id único de la película IMDB y API
+    tipo: Tipo de producción audivisual(movie, short, TV series, Episode). PK
+    año: Año de realización
+    genero: Genero de la producción
+    TOTAL REGISTROS = 825
+
+    - **peliculas_IMDB**\
+    Puntuación: Valoración de la película
+    Dirección : Director de pelicula
+    Guionista: Guionistas de la película
+    Argumento: Descripción de la película
+    Nombre_de_la_película: Titulo de la película
+    ID_de_la_película: Id único de la película IMDB. PK
+    Genero: Genero de la producción
+    TOTAL REGISTROS = 611
+
+
+    - **datos_oscars**\
+     *Columnas*
+    ceremonia: Fecha de la ceremonia. PK
+    mejor_pelicula: Mejor pelicula ganadora
+    mejor_director : Mejor director del año
+    mejor_actor: Mejor actor del año
+    mejor_actriz: Mejor actriz del año
+    TOTAL REGISTROS = 96
+
+   
+    - **actor_imdb**\
+    *Columnas*
+    Nombre: corresponde a nombre del actor o actriz principales de la película
+    Nacimiento : Fecha de nacimiento 
+    Otras_Obras : Obras adicionales por las que ha sido reconocido
+    Roles : Roles desarrollados en el ambito audiovisual
+    Premios : Cantidad de premios obtenidos
+    Pelicula: Pelicula entre el 2000 a 2015 en la que ha actuado
+    ID_Pelicula : Identificación única de la película en IMDB
+    Genero_Pelicula: Genero de la pelicula
+    Id_Actor: Identificación única del actor. PK
+    TOTAL REGISTROS = 5252
+
+
+En la *Análisis y Consultas de Datos* hemos dado respuesta a algunas de las preguntas desarrolladas por el cliente a través de MySql.
 
 
 #### Links:
